@@ -1,0 +1,7 @@
+README.md
+setup.py
+ProofReader.egg-info/PKG-INFO
+ProofReader.egg-info/SOURCES.txt
+ProofReader.egg-info/dependency_links.txt
+ProofReader.egg-info/entry_points.txt
+ProofReader.egg-info/top_level.txt

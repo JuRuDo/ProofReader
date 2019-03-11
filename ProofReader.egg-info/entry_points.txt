@@ -1,0 +1,3 @@
+[console_scripts]
+proofread = proofreader.proofread:main
+
