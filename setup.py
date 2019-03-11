@@ -10,4 +10,5 @@ setup(
     entry_points={
         'console_scripts': ["proofread = proofreader.proofread:main"],
     },
+    license="GPL-3.0",
 )
