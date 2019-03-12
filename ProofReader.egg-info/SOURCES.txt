@@ -1,10 +1,8 @@
+MANIFEST.in
 README.md
 setup.py
-ProofReader.egg-info/PKG-INFO
-ProofReader.egg-info/SOURCES.txt
-ProofReader.egg-info/dependency_links.txt
-ProofReader.egg-info/entry_points.txt
-ProofReader.egg-info/top_level.txt
 proofreader/__init__.py
 proofreader/netspeak.py
 proofreader/proofread.py
+tests/unit/proofreader/test_netspeak.py
+tests/unit/proofreader/test_proofread.py

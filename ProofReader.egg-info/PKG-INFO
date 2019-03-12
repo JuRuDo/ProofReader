@@ -1,10 +1,17 @@
-Metadata-Version: 1.0
+Metadata-Version: 1.1
 Name: ProofReader
 Version: 1.0.0
 Summary: A proofreader of English texts
-Home-page: UNKNOWN
+Home-page: https://github.com/JuRuDo/ProofReader
 Author: Julian Dosch
 Author-email: Dosch@bio.uni-frankfurt.de
 License: GPL-3.0
-Description: UNKNOWN
+Description: # ProofReader
+        A sample TDD project that communicates with the Netspeak.
 Platform: UNKNOWN
+Classifier: Environment :: Console
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
