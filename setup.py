@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="ProofReader",
-    version="0.0.1",
+    version="1.0.0",
     description="A proofreader of English texts",
     author="Julian Dosch",
     author_email="Dosch@bio.uni-frankfurt.de",
