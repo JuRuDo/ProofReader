@@ -20,13 +20,31 @@
 #
 #######################################################################
 
-from proofreader.netspeak import Netspeak
-import sys
-from proofreader.caching import Cache
+import os
+from pickle import load, dump
 
+class Cache:
+    _cachedict = {}
+#    with open(infile, 'rb') as infile:
+#        _cachedict = pickle.load(infile)
+#    _cachedict = p    with open(outfile, 'wb'):
+#        pickle.dump(_cachedict, outfile, protocol=2)
+    _dir_path = os.path.dirname(os.path.realpath(__file__)).split('/')
+    _dir_path = "/".join(_dir_path[:-1]) + "/.cache"
 
-def main():
-    netspeak = Netspeak()
-    cache = Cache()
-    print(netspeak(sys.argv[1]))
-    pass
+    def __init__(self):
+        self._read_cache()
+
+    def __call__(self, query):
+        pass
+
+    def write_cache(self):
+        outfile = open(self._dir_path + "/index", "wb")
+        dump(self._cachedict, outfile, protocol=2)
+        outfile.close()
+
+    def _read_cache(self):
+        if os.path.exists(self._dir_path + "/index"):
+            infile = open(self._dir_path + "/index", "rb")
+            self._cachedict = load(infile)
+            infile.close()

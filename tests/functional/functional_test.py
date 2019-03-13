@@ -22,6 +22,7 @@
 
 import unittest
 import subprocess as sp
+import os
 
 
 class NewUserTestCase(unittest.TestCase):
@@ -58,6 +59,18 @@ class NewUserTestCase(unittest.TestCase):
         for synonym in compute_synonyms:
             self.assertIn(synonym, proofread_run_result.stdout.decode())
         # self.fail("finish it!")
+
+    def test_creates_cache_on_first_run(self):
+        # The user runs the ProofReader with the argument '#compute' once.
+        # After some time the user tries to search for '#compute' again but has
+        # no internet access. Since the cache was created the user should still
+        # get the same results.
+        argument = os.path.dirname(os.path.realpath(__file__)).split('/')
+        dir_path = "/".join(argument[:-3]) + "/.cache"
+        if os.path.exists(dir_path + "/index"):
+            os.remove(dir_path + "/index")
+        proofread_run_result = sp.run(["proofread", "#compute"], stdout=sp.PIPE)
+        assert os.path.exists(dir_path + "/index")
 
 
 if __name__ == "__main__":
